@@ -1,9 +1,24 @@
 #include <Arduino.h>
 
-void setup() {
-  // put your setup code here, to run once:
+void setup()
+{
+  Serial.begin(115200);
+  Serial.println("Test");
+  pinMode(2, OUTPUT);
+  pinMode(15, OUTPUT);
+  digitalWrite(2, LOW);
+  digitalWrite(15, LOW);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void loop()
+{
+  Serial.println("Test");
+  digitalWrite(2, HIGH);
+  delay(2000);
+  digitalWrite(2, LOW);
+  delay(1000);
+  digitalWrite(15, HIGH);
+  delay(2000);
+  digitalWrite(15, LOW);
+  delay(1000);
 }
